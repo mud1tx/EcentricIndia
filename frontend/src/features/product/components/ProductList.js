@@ -2,6 +2,7 @@ import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { BiArrowFromLeft, BiArrowFromRight } from "react-icons/bi";
 import {
   ChevronDownIcon,
   FunnelIcon,
@@ -224,10 +225,10 @@ const ProductList = () => {
             </Dialog>
           </Transition.Root>
 
-          <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-              <h1 className="text-4xl font-bold tracking-tight text-dark">
-                New Arrivals
+          <main className="mx-auto max-w-7xl px-2">
+            <div className="flex items-baseline justify-between border-deepdark border-b-2 pb-4 pt-6">
+              <h1 className="text-4xl  font-bold tracking-tight text-dark">
+                All Products
               </h1>
 
               <div className="flex items-center">
@@ -363,20 +364,16 @@ const ProductList = () => {
 
                 {/* Product grid */}
                 <div className="lg:col-span-3">
-                  <div className="bg-main">
-                    <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                      <h2 className="text-2xl font-bold tracking-tight text-dark">
-                        Customers also purchased
-                      </h2>
-
-                      <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                  <div className="">
+                    <div className="mx-auto max-w-2xl  px-2 py-8 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
+                      <div className="mt-2 grid grid-cols-2  gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {products.map((product) => (
-                          <div key={product.id} className="group relative">
-                            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none  lg:h-80">
+                          <div key={product.id} className="group   relative">
+                            <div className="aspect-h-1 aspect-w-1  bg  w-full overflow-hidden rounded-md lg:aspect-none  lg:h-80">
                               <img
                                 src={product.imageSrc}
                                 alt={product.imageAlt}
-                                className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                                className="h-full w-full   object-cover object-center lg:h-full lg:w-full"
                               />
                             </div>
                             <div className="mt-4 flex justify-between">
@@ -400,12 +397,84 @@ const ProductList = () => {
                             </div>
                           </div>
                         ))}
+                        {/* Product Grid End */}
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </section>
+
+            {/* Pagination Can be move at last */}
+
+            <div className="flex items-center justify-between border-t border-deepdark  px-4 py-3 sm:px-2">
+              <div className="flex flex-1 justify-between sm:hidden">
+                <a
+                  href="#"
+                  className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                >
+                  <BiArrowFromRight />
+                </a>
+                <a
+                  href="#"
+                  className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                >
+                  <BiArrowFromLeft />
+                </a>
+              </div>
+              <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+                <div className="">
+                  <p className="text-sm flex flex-row gap-x-1 text-black">
+                    Showing
+                    <span className="font-medium">1</span>
+                    to
+                    <span className="font-medium">10</span>
+                    of
+                    <span className="font-medium">97</span>
+                    results
+                  </p>
+                </div>
+                <div>
+                  <nav
+                    className="isolate inline-flex -space-x-px rounded-md shadow-sm"
+                    aria-label="Pagination"
+                  >
+                    <a
+                      href="#"
+                      className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                    >
+                      <span className="sr-only">Previous</span>
+                      <BiArrowFromRight />
+                    </a>
+
+                    <a
+                      href="#"
+                      aria-current="page"
+                      className="relative z-10 inline-flex items-center bg-black px-4 py-2 text-sm font-semibold text-main focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    >
+                      1
+                    </a>
+                    <a
+                      href="#"
+                      className="relative hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                    >
+                      2
+                    </a>
+                    <span className="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0">
+                      ...
+                    </span>
+
+                    <a
+                      href="#"
+                      className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                    >
+                      <span class="sr-only">Next</span>
+                      <BiArrowFromLeft />
+                    </a>
+                  </nav>
+                </div>
+              </div>
+            </div>
           </main>
         </div>
       </div>
