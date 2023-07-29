@@ -17,7 +17,7 @@ const products = [
     name: "Basic Tee",
     href: "#",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+      "https://www.designinfo.in/wp-content/uploads/2023/01/Apple-iPhone-14-Pro-Mobile-Phone-493177786-i-1-1200Wx1200H-485x485-optimized.jpeg",
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
@@ -226,8 +226,8 @@ const ProductList = () => {
           </Transition.Root>
 
           <main className="mx-auto max-w-7xl px-2">
-            <div className="flex items-baseline justify-between border-deepdark border-b-2 pb-4 pt-6">
-              <h1 className="text-4xl  font-bold tracking-tight text-dark">
+            <div className="flex items-baseline justify-between   pb-4 pt-6">
+              <h1 className="md:text-4xl text-2xl  font-bold tracking-tight  text-dark">
                 All Products
               </h1>
 
@@ -369,11 +369,11 @@ const ProductList = () => {
                       <div className="mt-2 grid grid-cols-2  gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {products.map((product) => (
                           <div key={product.id} className="group   relative">
-                            <div className="aspect-h-1 aspect-w-1  bg  w-full overflow-hidden rounded-md lg:aspect-none  lg:h-80">
+                            <div className="aspect-h-1 aspect-w-1  bg-main  w-full overflow-hidden rounded-md lg:aspect-none  lg:h-80">
                               <img
                                 src={product.imageSrc}
                                 alt={product.imageAlt}
-                                className="h-full w-full   object-cover object-center lg:h-full lg:w-full"
+                                className="h-full w-full   object-contain object-center lg:h-full lg:w-full"
                               />
                             </div>
                             <div className="mt-4 flex justify-between">
@@ -407,7 +407,7 @@ const ProductList = () => {
 
             {/* Pagination Can be move at last */}
 
-            <div className="flex items-center justify-between border-t border-deepdark  px-4 py-3 sm:px-2">
+            <div className="flex items-center justify-between  px-4 py-3 sm:px-2">
               <div className="flex flex-1 justify-between sm:hidden">
                 <a
                   href="#"

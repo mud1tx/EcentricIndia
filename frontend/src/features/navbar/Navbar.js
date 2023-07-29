@@ -22,7 +22,7 @@ const Navbar = () => {
     <>
       {/* <div className="backdrop-blur-lg bg-red-600 "> */}
       {/* Code block starts */}
-      <nav className=" border-deepdark border-b-2   font-Poppins xl:block hidden  ">
+      <nav className="   font-Poppins xl:block hidden  ">
         <div className="flex   items-center justify-between  mx-20">
           <div className="flex   w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-between">
             <Link to="/">
@@ -128,10 +128,13 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <nav>
+      <nav className="">
         <div className="py-4 px-6 w-full flex xl:hidden  sticky justify-between items-center   top-0 z-40">
           <div className="w-full">
-            <h1>Ecentric India</h1>
+            <h2 className=" cursor-pointer text-dark md:text-2xl text-xl font-bold ">
+              Ecentric
+              <span className="md:text-lg text-base font-medium">India</span>
+            </h2>
           </div>
           <div className="flex items-center">
             <div
@@ -147,8 +150,8 @@ const Navbar = () => {
         <div
           className={
             show
-              ? "w-full xl:hidden h-full absolute z-40   transform  translate-x-0 "
-              : "   w-full xl:hidden h-full absolute z-40   transform -translate-x-full"
+              ? "w-full xl:hidden h-full  top-14 z-40 fixed transition-all ease-in-out  duration-300 transform  translate-x-0 "
+              : "   w-full xl:hidden h-full fixed z-40  transition-all ease-in-out   duration-300 transform   -translate-x-full"
           }
         >
           <div
@@ -162,14 +165,19 @@ const Navbar = () => {
                   <div className="mt-6  flex w-full items-center justify-between">
                     <div className="flex  items-center justify-between w-full">
                       <div className="flex  items-center">
-                        <h1>Ecentric india</h1>
+                        <h2 className=" cursor-pointer text-dark md:text-2xl text-xl font-bold ">
+                          Ecentric
+                          <span className="md:text-lg text-base font-medium">
+                            India
+                          </span>
+                        </h2>
                       </div>
                       <div
                         id="cross"
                         className="text-dark"
                         onClick={() => setShow(!show)}
                       >
-                        <AiOutlineClose />
+                        <AiOutlineClose className="cursor-pointer text-dark hover:text-deepdark" />
                       </div>
                     </div>
                   </div>
