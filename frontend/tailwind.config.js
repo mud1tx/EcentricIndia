@@ -6,6 +6,9 @@ module.exports = {
       Poppins: ["Poppins", "sans-serif"],
     },
     extend: {
+      gridTemplateRows: {
+        "[auto,auto,1fr]": "auto auto 1fr",
+      },
       colors: {
         main: "#ffffff",
         textcolor: "#111827",

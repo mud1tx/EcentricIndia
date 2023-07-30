@@ -60,7 +60,7 @@ const Cart = () => {
       <div className="mx-auto flex   sm:flex-row flex-col  sm:items-start items-center   gap-4   max-w-7xl sm:py-6 lg:px-8">
         <div className="mt-8 w-4/5 ">
           <div className="flow-root">
-            <ul role="list" className="-my-4 divide-y divide-dark">
+            <ul className="-my-4 divide-y divide-dark">
               {products.map((product) => (
                 <li key={product.id} className="flex  py-4 ">
                   <div className="h-24 w-24    flex-shrink-0 overflow-hidden rounded-md ">
@@ -123,12 +123,12 @@ const Cart = () => {
             Shipping and taxes calculated at checkout.
           </p>
           <div className="mt-6">
-            <a
-              href="#"
+            <Link
+              to="/checkout"
               className="flex items-center justify-center rounded-md border  focus:ring-black/50 focus:ring-4 border-transparent bg-dark px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-deepdark"
             >
               Checkout
-            </a>
+            </Link>
           </div>
           <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
             <p>
