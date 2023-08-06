@@ -44,6 +44,7 @@ exports.fetchAllProducts = async (req, res) => {
   }
 
   let query = Product.find(condition);
+  console.log("adsad", query);
   let totalProductsQuery = Product.find(condition);
 
   console.log(req.query.category);
@@ -75,6 +76,7 @@ exports.fetchAllProducts = async (req, res) => {
 
   try {
     const docs = await query.exec();
+    console.log("asdasda", docs);
     res.set("X-Total-Count", totalDocs);
     res.status(200).json(docs);
   } catch (err) {
